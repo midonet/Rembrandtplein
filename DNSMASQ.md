@@ -20,6 +20,7 @@ root@pris:~# cat /etc/hosts
 ::1     localhost ip6-localhost ip6-loopback
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
+```
 
 This is a very simple dnsmasq configuration.
 ```
@@ -46,7 +47,7 @@ dhcp-host=d0:50:99:99:e6:4c,192.168.9.16,mx006
 dhcp-host=44:8a:5b:ef:e2:06,192.168.9.17,mx007
 ```
 
-This is a general cloud config for all the machines. If you want a cloud-config per machine you will have to create files in /var/lib/tftpboot/pxelinux/pxelinux.cfg/01-xx-xx-xx-yy-yy-yy where xx-xx-xx-yy-yy-yy is the mac address of the box. These files then can point to a different URL. Also the webserver does not have to be in your LAN, it can be anywhere.
+Here we have a general cloud config for all the machines. If you want a cloud-config per machine you will have to create files in /var/lib/tftpboot/pxelinux/pxelinux.cfg/01-xx-xx-xx-yy-yy-yy where xx-xx-xx-yy-yy-yy is the mac address of the box. These files then can point to a different URL. Also the webserver does not have to be in your LAN, it can be anywhere.
 ```
 root@pris:~# cat /var/www/html/cloud-config.yml
 #cloud-config
