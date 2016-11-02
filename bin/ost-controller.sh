@@ -2,6 +2,12 @@
 
 LOCAL_IP=$1
 
+ssh core@$LOCAL_IP hostname || exit 1
+ssh core@$LOCAL_IP hostname -f || exit 1
+ssh core@$LOCAL_IP hostname -i || exit 1
+
+echo OK
+
 ssh core@$LOCAL_IP -t <<EOF
 echo disable | sudo tee /sys/firmware/acpi/interrupts/gpe6F
 
